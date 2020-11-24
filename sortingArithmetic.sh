@@ -22,3 +22,6 @@ echo "The output for the expression a*b+c is $result2"
 
 result3=$(( $c + $a / $b ))
 echo "The output for the expression c+a/b is $result3"
+
+result4=$(( $a % $b + $c ))
+echo "The output for the expression a%b+c is $result4"
