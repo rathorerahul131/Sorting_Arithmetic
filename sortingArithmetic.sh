@@ -33,4 +33,20 @@ do
 	All_Results["result"$i]=$((result$i))
 done
 
-echo "All the results are ${All_Results[@]}"
+echo All the results are: ${All_Results[@]}
+
+# sizeOfAll_Results variable stores the size of dictionary All_Results
+
+sizeOfAll_Results=${#All_Results[@]}
+
+
+# Created an array name Result_Array to read from Dictionary and store into array
+# Looping through all the values of dictionary and storing the in an array
+
+for ((i=1;i<=$sizeOfAll_Results;i++))
+do
+	Result_Array[i]=${All_Results[result$i]}
+done
+
+#printing the Array values
+echo Array values are : ${Result_Array[@]}
