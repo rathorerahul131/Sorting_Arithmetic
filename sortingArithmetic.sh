@@ -1,5 +1,3 @@
-  
-  
 #!/bin/bash
 
 echo "Welcome to the sorting Arithmetic Computation Program"
@@ -17,3 +15,7 @@ echo "The values of a,b,c are $a, $b, $c"
 
 result1=$(( $a + $b * $c ))
 echo "The output for the expression a+b*c is $result1"
+
+
+result2=$(( $a * $b + $c ))
+echo "The output for the expression a*b+c is $result2"
