@@ -51,9 +51,26 @@ done
 #printing the Array values
 echo Array values are : ${Result_Array[@]}
 
-#storing the length of Result_Array
 
 length=${#Result_Array[@]}
+for ((i = 0; i<$length; i++)) 
+do
+      
+    for((j = 0; j<$(($length-i-1)); j++)) 
+    do
+      
+        if [ ${Result_Array[j]} -gt ${Result_Array[$((j+1))]} ] 
+        then
+            # swap 
+            temp=${Result_Array[j]} 
+            Result_Array[$j]=${Result_Array[$((j+1))]}   
+            Result_Array[$((j+1))]=$temp 
+        fi
+    done
+done
+  
+echo "Array values in Ascending order is :"
+echo ${Result_Array[@]}
 
 # Sorting the array in Descending oreder using Bubble Sort
 for ((i = 0; i<$length; i++)) 
@@ -72,25 +89,5 @@ do
     done
 done
   
-echo "Array values in Ascending order is :"
-echo ${Result_Array[@]}
-
-# Sorting the array in Ascending oreder using Bubble Sort
-for ((i = 0; i<$length; i++)) 
-do
-      
-    for((j = 0; j<$(($length-i-1)); j++)) 
-    do
-      
-        if [ ${Result_Array[j]} -gt ${Result_Array[$((j+1))]} ] 
-        then
-            # swap 
-            temp=${Result_Array[j]} 
-            Result_Array[$j]=${Result_Array[$((j+1))]}   
-            Result_Array[$((j+1))]=$temp 
-        fi
-    done
-done
-  
-echo "Array values in Ascending order is :"
+echo "Array values in Descending order is :"
 echo ${Result_Array[@]}
